@@ -1,17 +1,16 @@
 {
   "name": "react-free-ui",
   "version": "0.1.1",
-  "description": "A simple react ui library",
+  "description": "A simple react ui library (not finished)",
   "main": "lib/index.js",
   "module": "esm/index.js",
   "keywords": [
-    "react",
-    "ui"
   ],
   "author": "Yenn Lou ",
   "license": "MIT",
   "files": [
-    "lib"
+    "lib",
+    "esm"
   ],
   "scripts": {
     "build:lib": "cross-env BABEL_ENV=commonjs babel src -d lib",
