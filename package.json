@@ -12,8 +12,8 @@
     "esm"
   ],
   "scripts": {
-    "build:lib": "cross-env BABEL_ENV=commonjs babel src -d lib",
-    "build:esm": "cross-env BABEL_ENV=esm babel src -d esm",
+    "build:lib": "cross-env BABEL_ENV=commonjs babel src -d lib --ignore '**/*.stories.js'",
+    "build:esm": "cross-env BABEL_ENV=esm babel src -d esm --ignore '**/*.stories.js'",
     "build": "npm run build:lib && npm run build:esm",
     "prepublishOnly": "rm -rf esm lib && npm run build",
     "storybook": "start-storybook -p 6006"
@@ -62,7 +62,9 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "styled-components": "^4.3.2"
+  },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
