@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Button = (props) => (
-  <div>
-    I'm a button
-  </div>
+const Button = ({ children }) => (
+  <button>
+    {children}
+  </button>
 )
 
 export default Button
