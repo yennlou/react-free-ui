@@ -12,10 +12,12 @@
     "esm"
   ],
   "scripts": {
-    "build:lib": "cross-env BABEL_ENV=commonjs babel src -d lib --ignore '**/*.stories.js'",
-    "build:esm": "cross-env BABEL_ENV=esm babel src -d esm --ignore '**/*.stories.js'",
+    "test": "jest",
+    "clean": "rm -rf esm lib ",
+    "build:lib": "cross-env BABEL_ENV=commonjs babel src -d lib --ignore '**/*.stories.js','**/*.test.js','**/__snapshots__'",
+    "build:esm": "cross-env BABEL_ENV=esm babel src -d esm --ignore '**/*.stories.js','**/*.test.js','**/__snapshots__'",
     "build": "npm run build:lib && npm run build:esm",
-    "prepublishOnly": "rm -rf esm lib && npm run build",
+    "prepublishOnly": "npm run clean && npm run build",
     "storybook": "start-storybook -p 6006"
   },
   "babel": {
@@ -56,7 +58,13 @@
     ],
     "rules": {
       "react/prop-types": 0
+    },
+    "env": {
+      "jest": true
     }
+  },
+  "jest": {
+    "setupFilesAfterEnv": ["<rootDir>/tools/setupTests.js"]
   },
   "peerDependencies": {
     "react": "^16.9.0",
@@ -77,8 +85,11 @@
     "@storybook/addons": "^5.2.1",
     "@storybook/react": "^5.2.1",
     "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "cross-env": "^6.0.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^6.4.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-config-standard-react": "^9.2.0",
@@ -86,6 +97,7 @@
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-standard": "^4.0.1"
+    "eslint-plugin-standard": "^4.0.1",
+    "jest": "^24.9.0"
   }
 }
