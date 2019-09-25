@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
-export const ResetStyle = createGlobalStyle`
+export default createGlobalStyle`
   html {
     box-sizing: border-box;
     font-size: 16px;
