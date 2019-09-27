@@ -2,7 +2,7 @@ const COLORS = {
   PRIMARY: '#AA9681'
 }
 
-const themeObject = {
+const themeObj = {
   buttonStyle: {
     color: COLORS.PRIMARY,
     border: '1px solid currentColor',
@@ -10,4 +10,4 @@ const themeObject = {
   }
 }
 
-export default themeObject
+export default themeObj

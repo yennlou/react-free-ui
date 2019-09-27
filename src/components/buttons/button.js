@@ -8,9 +8,9 @@ const baseStyle = {
   padding: '0.25em 1em'
 }
 
-const Button = styled.button(({ theme }) => {
-  if (!theme) return baseStyle
-  return Object.assign({}, baseStyle, theme.buttonStyle)
+const Button = styled.button(({ theme, styleObj }) => {
+  const buttonStyle = theme ? theme.buttonStyle : {}
+  return { ...baseStyle, ...buttonStyle, ...styleObj }
 })
 
 export default Button

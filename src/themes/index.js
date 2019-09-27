@@ -1,2 +1,2 @@
-export { default as defaultThemeObject } from './default-theme'
-export { default as darkThemeObject } from './dark-theme'
+export { default as defaultThemeObj } from './default-theme'
+export { default as darkThemeObj } from './dark-theme'
